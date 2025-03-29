@@ -21,11 +21,16 @@ class AuthenticationClient:
     base_url = "https://api.backpack.exchange/"
     private_key_obj: ed25519.Ed25519PrivateKey
 
-    def __init__(self, public_key: str, secret_key: str, window: int = 5000):
+    def __init__(self, public_key: str, secret_key: str, window: int = 5000, proxy=None):
         self.key = public_key
         self.private_key_obj = ed25519.Ed25519PrivateKey.from_private_bytes(base64.b64decode(secret_key))
         self.window = window
         self.session = requests.session()
+        if proxy:
+            self.session.proxies.update({
+                "http": proxy,
+                "https": proxy,
+            })
 
     def _send_request(self, method, endpoint, action, params=None):
         """
