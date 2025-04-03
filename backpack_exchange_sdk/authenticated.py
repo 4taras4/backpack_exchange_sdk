@@ -21,7 +21,7 @@ class AuthenticationClient:
     base_url = "https://api.backpack.exchange/"
     private_key_obj: ed25519.Ed25519PrivateKey
 
-    def __init__(self, public_key: str, secret_key: str, window: int = 10000, proxy=None):
+    def __init__(self, public_key: str, secret_key: str, window: int = 100000, proxy=None):
         self.key = public_key
         self.private_key_obj = ed25519.Ed25519PrivateKey.from_private_bytes(base64.b64decode(secret_key))
         self.window = window
