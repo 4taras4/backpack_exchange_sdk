@@ -89,18 +89,6 @@ class AuthenticationClient:
             "X-Timestamp": str(timestamp),
             "X-Window": str(self.window),
             "Content-Type": "application/json; charset=utf-8",
-            'cache-control': 'no-cache',
-            'origin': 'https://backpack.exchange',
-            'pragma': 'no-cache',
-            'priority': 'u=1, i',
-            'referer': 'https://backpack.exchange/',
-            'sec-ch-ua': '"Chromium";v="134", "Not:A-Brand";v="24", "Google Chrome";v="134"',
-            'sec-ch-ua-mobile': '?0',
-            'sec-ch-ua-platform': '"macOS"',
-            'sec-fetch-dest': 'empty',
-            'sec-fetch-mode': 'cors',
-            'sec-fetch-site': 'same-site',
-            'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36',
         }
 
     # ================================================================
