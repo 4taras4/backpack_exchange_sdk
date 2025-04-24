@@ -54,20 +54,6 @@ class PublicClient:
         """
         return self._get("api/v1/market", params={"symbol": symbol})
 
-    def get_ticker(self, symbol: str, interval: TickerInterval = TickerInterval.D1):
-        """
-        Retrieves summarised statistics for the last 24 hours for the given market symbol.
-        """
-        params = {"symbol": symbol, "interval": interval.value}
-        return self._get("api/v1/ticker", params=params)
-
-    def get_tickers(self, interval: TickerInterval = TickerInterval.D1):
-        """
-        Retrieves summarised statistics for the last 24 hours for all market symbols.
-        """
-        params = {"interval": interval.value}
-        return self._get("api/v1/tickers", params=params)
-
     def get_depth(self, symbol: str):
         """
         Retrieves the order book depth for a given market symbol.
